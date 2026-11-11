@@ -17,11 +17,27 @@ const b = (x: number) => x
 
 (1);
 
-// Standard newline for comparison
+// Indented U+2028 LINE SEPARATOR
 const c = (x: number) => x
 >c : Symbol(c, Decl(missingSemicolonUnicodeLineTerminator.ts, 9, 5))
 >x : Symbol(x, Decl(missingSemicolonUnicodeLineTerminator.ts, 9, 11))
 >x : Symbol(x, Decl(missingSemicolonUnicodeLineTerminator.ts, 9, 11))
+
+  (1);
+
+// Indented U+2029 PARAGRAPH SEPARATOR
+const d = (x: number) => x
+>d : Symbol(d, Decl(missingSemicolonUnicodeLineTerminator.ts, 13, 5))
+>x : Symbol(x, Decl(missingSemicolonUnicodeLineTerminator.ts, 13, 11))
+>x : Symbol(x, Decl(missingSemicolonUnicodeLineTerminator.ts, 13, 11))
+
+  (1);
+
+// Standard newline for comparison
+const e = (x: number) => x
+>e : Symbol(e, Decl(missingSemicolonUnicodeLineTerminator.ts, 17, 5))
+>x : Symbol(x, Decl(missingSemicolonUnicodeLineTerminator.ts, 17, 11))
+>x : Symbol(x, Decl(missingSemicolonUnicodeLineTerminator.ts, 17, 11))
 
 (1);
 

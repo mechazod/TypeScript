@@ -2441,9 +2441,19 @@ func SkipTriviaEx(text string, pos int, options *SkipTriviaOptions) int {
 				continue
 			}
 		default:
-			if ch > rune(maxAsciiCharacter) && stringutil.IsWhiteSpaceLike(ch) {
-				pos += size
-				continue
+			if ch > rune(maxAsciiCharacter) {
+				if stringutil.IsLineBreak(ch) {
+					pos += size
+					if options.StopAfterLineBreak {
+						return pos
+					}
+					canConsumeStar = options.InJSDoc
+					continue
+				}
+				if stringutil.IsWhiteSpaceSingleLine(ch) {
+					pos += size
+					continue
+				}
 			}
 		}
 		return pos
